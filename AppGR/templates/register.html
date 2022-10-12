@@ -1,0 +1,18 @@
+{% extends "padre.html" %}
+
+{% block contenido_base %}
+
+<img src="https://d3lxpzyvnn8ev0.cloudfront.net/shade-finder/img/landing-min.jpg" width="1350" height="350" alt=""/><em><strong>
+</p>
+</h1>Formulario de Registro</h1>
+<form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+  
+  <table>
+      {{ formulario.as_table }} 
+  <table>
+  <button type="submit">Regístrate</button>
+</form>
+
+</h2>{{ mensaje }}</h2>
+</p>
+{% endblock contenido_base %}

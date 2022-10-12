@@ -1,0 +1,17 @@
+{% extends "padre.html" %}
+
+{% block contenido_base %}
+
+<img src="https://cdn.shopify.com/s/files/1/0253/5119/2681/collections/bridesmaid-headpieces_2000x.jpg" width="1350" height="280" alt=""/><em><strong>
+</p>
+<h3>Cargar Avatar</h1>
+</p>
+<form action="{% url 'agregarAvatar' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+  
+    <table>
+        {{ formulario.as_table }}
+        <table>
+        <button type="submit">Guardar</button>
+</form>
+</p>
+{% endblock contenido_base %}

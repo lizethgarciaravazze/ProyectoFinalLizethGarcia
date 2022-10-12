@@ -1,0 +1,74 @@
+{% extends "padre.html" %}
+
+{% block style_block %}
+<style>
+  table.coder-table {
+    border:3px solid;
+  }
+  th,
+  td {
+    border:1px solid;
+    padding:5px 10px;
+  }
+</style>
+{% endblock style_block %}
+
+{% block contenido_base %}
+
+
+<section class="py-3 bg-light">
+  <div class="container px-5 my-5">
+      <div class="row gx-5 align-items-center">
+          <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src=https://cdn.shopify.com/s/files/1/0047/6302/5479/products/SarahKeary-Vogue-5_2048x.jpg alt="..." /></div>
+          <div class="col-lg-4">
+            <h1 class="fw-bolder">✨ Brochas!</h1>
+            </p>
+            <h3 class="fw-bolder"> Difuminar, la clave</h3>
+            </p>
+            </p>
+            </h5>Fecha 05/10/2022</h5>
+            </p>
+            </p>
+            <p class="lead fw-normal text-muted mb-0">Las brochas ayudan a conseguir un maquillaje mucho más definido, más natural. Para sacarles todo su potencial, es fundamental saber para qué sirve cada una de las brochas y cómo utilizarlas. Es probable que a la hora de comprar alguna te hayas visto algo perdida ante tanta variedad. Nosotos tenemos todas y te explicamos la función de cada una, ingresa y aprende!
+            </p>
+            </p>
+            </h4>Autor: Lizeth García Ravazze</h4>
+            </p>
+              </div>
+          </div>
+      </section>
+
+
+<h1>Brochas</h1>
+<a href="{% url 'brochas_formulario' %}">Crear Brochas!</a>
+<br>
+<a href="{% url 'form_busqueda_brochas' %}">Buscar Brochas</a>
+
+<br><br>
+<h3>Base de Datos:</h3>
+
+<table class="coder-table">
+  <tbody>
+    <tr>
+      <th>
+        <strong>Numero</strong>
+      </th>
+      <th>
+        <strong>Clase</strong>
+      </th>
+    </tr>
+    {% for brocha in brochas %}
+    <tr>
+      <td>{{brocha.numero}}</td>
+      <td>{{brocha.clase}}</td>
+      <td></td>
+      <td><a href="{% url 'eliminar_brocha' brocha.id %}">Eliminar</a></td>
+      <td><a href="{% url 'editar_brocha' brocha.id %}">Editar</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</p>
+
+{% endblock contenido_base %}

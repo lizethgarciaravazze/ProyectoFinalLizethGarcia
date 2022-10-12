@@ -1,0 +1,56 @@
+{% extends "padre.html" %}
+
+{% block contenido_base %}
+
+{% if exitoso %}
+
+<div style="background-color:#545052;">Bienvenido!</div>
+{% endif %}
+
+ <!-- Page Content-->
+ <div class="container px-4 px-lg-5">
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://d3cdlnm7te7ky2.cloudfront.net/media/wysiwyg/Brands/Bobbi/Secci_n-MakeUp-900x500.jpg" alt="" /></div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">GLAM MAKEUP</h1>
+            <p>Aprovecha y mira todas las opciones que tenemos para ti, te van a encantar!</p>
+            <a class="btn btn-primary" href="#!">Entrar!</a>
+        </div>
+    </div>
+    <!-- Call to Action-->
+    <div class="card text-white bg-dark my-5 py-4 text-center">
+        <div class="card-body"><h1 class="text-white m-0">✨ Glow, wake up and makeup!</h1></div>
+    </div>
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                 <div class="card-body">
+                    <h2 class="card-title">SOMBRAS</h2>
+                    <p class="card-text">Sombras metalizadas y mate, perfectas para toda ocasión.</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'sombras' %}">Más...</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">BASES</h2>
+                    <p class="card-text">Encuentra el tono perfecto para tu piel, tenemos todos disponibles.</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'base' %}">Más...</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">BROCHAS</h2>
+                    <p class="card-text">Las mejores brochas, tenemos sets o puedes comprarlas por separado.</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'brochas' %}">Más...</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido_base %}

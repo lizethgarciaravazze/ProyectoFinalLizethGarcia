@@ -1,0 +1,81 @@
+{% extends "padre.html" %}
+
+{% block style_block %}
+<style>
+  table.coder-table {
+    border:3px solid;
+  }
+  th,
+  td {
+    border:1px solid;
+    padding:5px 10px;
+  }
+</style>
+{% endblock style_block %}
+
+{% block contenido_base %}
+
+
+  <section class="py-3 bg-light">
+      <div class="container px-5 my-5">
+          <div class="row gx-5 align-items-center">
+              <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src=https://assets.vogue.in/photos/5da95f1ed34278000861d40d/master/pass/featured%20eyeshadow.jpg alt="..." /></div>
+              <div class="col-lg-4">
+                <h1 class="fw-bolder">✨ Sombras!</h1>
+                </p>
+                <h3 class="fw-bolder"> Una mirada cautivadora</h3>
+                </p>
+                </p>
+                </h5>Fecha 01/10/2022</h5>
+                </p>
+                </p>
+                <p class="lead fw-normal text-muted mb-0">Los ojos son uno de los elementos a los cuales se les debe prestar mucha atención al hablar de maquillaje, ya que en ellos, es donde más tiempo va a recaer la mirada de todas las personas. Como es de imaginar, a la hora de maquillar los ojos podemos encontrar productos específicos para esta zona. Las sombras para ojos usualmente suelen estar hechas de polvos, pero que también es posible encontrarlas en formato líquido, o en crema, de una manera muy similar a como podemos encontrar por ejemplo una base de maquillaje. Explora todas las opciones que tenemos para ti!
+                </p>
+                </p>
+                </h4>Autor: Lizeth García Ravazze</h4>
+                </p>
+                  </div>
+              </div>
+          </section>
+
+
+<h1>Sombras</h1>
+<a href="{% url 'sombras_formulario' %}">Crear Sombras!</a>
+<br>
+<a href="{% url 'form_busqueda_sombras' %}">Buscar Sombras</a>
+
+<br><br>
+<h3>Base de Datos:</h3>
+
+<table class="coder-table">
+  <tbody>
+    <tr>
+      <th>
+        <strong>Codigo</strong>
+      </th>
+      <th>
+        <strong>Color</strong>
+      </th>
+      <th>
+        <strong>Tipo</strong>
+      </th>
+    </tr>
+<ul>
+    {% for sombra in sombras %}
+    <tr>
+      <td>{{sombra.codigo}}</td>
+      <td>{{sombra.color}}</td>
+      <td>{{sombra.tipo}}</td>
+      <td><a class="btn btn-success" href="{% url 'eliminar_sombra' sombra.id %}">Eliminar</a></td>
+      <td><a class="btn btn-success" href="{% url 'editar_sombra' sombra.id %}">Editar</a></td>
+    </tr>
+    {% endfor %}
+<ul>
+  </tbody>
+</table>
+</div>
+</p>
+</p>
+</p>
+
+{% endblock contenido_base %}

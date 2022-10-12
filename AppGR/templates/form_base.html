@@ -1,0 +1,15 @@
+{% extends "padre.html" %}
+
+{% block contenido_base %}
+<img src="https://qvc.scene7.com/is/image/QVC/pic/hb/sq1_rsp_Makeup_20220728.jpg" width="1350" height="280" alt=""/><em><strong>
+</p>
+</h2>Crear Base</h2>
+</p>
+<form method="post">
+  {% csrf_token %}
+  {{ formulario.as_p }}
+  <input type="submit" value="Enviar" />
+</form>
+</p>
+</p>
+{% endblock contenido_base %}

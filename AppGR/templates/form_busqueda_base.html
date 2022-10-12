@@ -1,0 +1,16 @@
+{% extends "padre.html" %}
+
+{% block contenido_base %}
+<img src="https://images.qvc.com/is/image/pic/hb/sq1_sp1_Palettes_Page_20190206.jpg" width="1500" height="350" alt=""/><em><strong>
+</p>
+</h2>Buscar Base</h2>
+</p>
+<form action="{% url 'busqueda_base' %}" method="GET">
+  {% csrf_token %}
+  <span>Codigo:
+    <input type="integer" name="codigo">
+  </span>
+  <input type="submit" value="Buscar" />
+</form>
+</p>
+{% endblock contenido_base %}

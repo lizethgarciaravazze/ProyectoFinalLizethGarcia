@@ -1,0 +1,82 @@
+{% extends "padre.html" %}
+
+
+{% block style_block %}
+<style>
+  table.coder-table {
+    border:3px solid;
+  }
+  th,
+  td {
+    border:1px solid;
+    padding:5px 10px;
+  }
+</style>
+{% endblock style_block %}
+
+{% block contenido_base %}
+
+
+<section class="py-3 bg-light">
+  <div class="container px-5 my-5">
+      <div class="row gx-5 align-items-center">
+          <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src=https://www.entrenosotras.cl/wp-content/uploads/elementor/thumbs/Ok-opyh0duekzt8wprzdr5mgt6c49710pp3xb33g2nfe8.jpg alt="..." /></div>
+          <div class="col-lg-4">
+            <h1 class="fw-bolder">✨ Base!</h1>
+            </p>
+            <h3 class="fw-bolder"> Una piel luminosa</h3>
+            </p>
+            </p>
+            </h5>Fecha 08/10/2022</h5>
+            </p>
+            </p>
+            <p class="lead fw-normal text-muted mb-0">Uno de los aspectos que se deben tener en cuenta a la hora de realizar un maquillaje es que no todas las personas poseen el mismo tipo de piel. Podemos encontrar diferentes características que varían de una persona a otra, como pueden ser el color, el tono, la mayor o menor presencia de grasa, imperfecciones como pueden ser pequeñas cicatrices, acné, arrugas, entre otras. El tipo de piel va a ser determinante para elegir la base adecuada. Acá ofrecemos todo tipo de bases, busca y encuentra la mejor para ti!
+            </p>
+            </p>
+            </h4>Autor: Lizeth García Ravazze</h4>
+            </p>
+              </div>
+          </div>
+      </section>
+
+
+<h1>Bases</h1>
+<a href="{% url 'base_formulario' %}">Crear Bases!</a>
+<br>
+<a href="{% url 'form_busqueda_base' %}">Buscar Bases</a>
+
+<br><br>
+<h3>Base de Datos:</h3>
+
+<table class="coder-table">
+  <tbody>
+    <tr>
+      <th>
+        <strong>Codigo</strong>
+      </th>
+      <th>
+        <strong>Tono</strong>
+      </th>
+      <th>
+        <strong>Cobertura</strong>
+      </th>
+    </tr>
+    {% for bases in base %}
+    <tr>
+      <td>{{bases.codigo}}</td>
+      <td>{{bases.tono}}</td>
+      <td>{{bases.cobertura}}</td>
+      <td></td>
+      <td><a href="{% url 'eliminar_base' bases.id %}">Eliminar</a></td>
+      <td><a href="{% url 'editar_base' bases.id %}">Editar</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</p>
+</p>
+</p>
+
+
+{% endblock contenido_base %}
