@@ -28,5 +28,8 @@ urlpatterns = [
     path('logout/', views.LogoutView.as_view(template_name='logout.html'), name='logout'),
     path('editar_perfil/', views.ProfileUpdateView.as_view(), name='editar_perfil'),
     path('agregarAvatar/', views.agregarAvatar, name='agregarAvatar'),
+    path('blog/', views.blog, name='blog'),
+    path('blog_formulario/', views.blog_formulario, name='blog_formulario'),
+    path('edit_blog/<int:blog_id>/', views.edit_blog, name='edit_blog'),
     
 ]

@@ -1,0 +1,50 @@
+{% extends "padre.html" %}
+
+{% block style_block %}
+<style>
+  table.coder-table {
+    border:3px solid;
+  }
+  th,
+  td {
+    border:1px solid;
+    padding:5px 10px;
+  }
+</style>
+{% endblock style_block %}
+
+{% block contenido_base %}
+
+
+
+<h1>✨ Blog ✨</h1>
+<a href="{% url 'blog_formulario' %}">Crear Contenido!</a>
+
+<br>
+
+<br><br>
+<ul>
+    {% for blog in blog %}
+    
+      <div>
+          
+          <h2><a href="">{{ blog.titulo }}</a></h2>
+          <p> Subtítulo: {{ blog.subtitulo }}</p>
+          <p> Autor: {{ blog.autor }}</p>
+          <p> Fecha: {{ blog.fecha }}</p>
+          <p> Contenido: {{ blog.contenido }}</p>
+          <p> Imagen: {{ blog.imag | safe }}</p>
+
+      </div>
+
+  
+    {% endfor %}
+<ul>
+  </tbody>
+</table>
+</div>
+</p>
+</p>
+</p>
+
+{% endblock contenido_base %}

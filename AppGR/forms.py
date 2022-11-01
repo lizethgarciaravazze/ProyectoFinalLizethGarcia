@@ -1,7 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from AppGR.models import Avatar 
+from AppGR.models import Avatar, Blog 
+from ckeditor.fields import RichTextField
+from django.forms import ModelForm
 
 class SombrasForm(forms.Form):
     codigo = forms.IntegerField()
@@ -35,4 +37,8 @@ class UserUpdateForm(forms.ModelForm):
 
 class AvatarForm(forms.Form):
     imagen=forms.ImageField(label="Imagen")
-    
+
+class BlogForm(ModelForm):
+        class Meta:
+            model = Blog
+            fields = ['titulo', 'subtitulo', 'fecha', 'autor', 'contenido', 'imag']
